@@ -29,7 +29,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(null);
-  const [isAuthInitialized, setIsAuthInitialized] = useState(false); // ✅
+  const [isAuthInitialized, setIsAuthInitialized] = useState(false); 
 
   const login = (token: string) => {
     try {
@@ -55,13 +55,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.removeItem("token");
   };
 
-  // ✅ On mount, check for token in localStorage and mark auth initialized
   useEffect(() => {
     const savedToken = localStorage.getItem("token");
     if (savedToken) {
       login(savedToken);
     }
-    setIsAuthInitialized(true); // ✅ Marks it ready
+    setIsAuthInitialized(true);
   }, []);
 
   const isSuperAdmin = user?.role === "SuperAdmin";

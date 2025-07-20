@@ -88,7 +88,7 @@ export default function Students() {
       }))
       setStudents(mapped.reverse())
     } catch (err) {
-      // handle error
+      console.log(err);
     } finally {
       setLoading(false)
     }
@@ -99,11 +99,11 @@ export default function Students() {
   }, [])
 
   useEffect(() => {
-    const token = localStorage.getItem("token"); // or sessionStorage, or your auth context
+    const token = localStorage.getItem("token");
     if (!token) {
       navigate("/login", { replace: true });
     }
-    // Optionally: validate token with backend here
+
   }, [navigate]);
 
   const handleFormClose = () => {
@@ -128,7 +128,7 @@ export default function Students() {
       await deleteStudent(id)
       fetchStudents()
     } catch (err) {
-      // Optionally handle error
+      console.log(err);
     } finally {
       setLoading(false)
     }

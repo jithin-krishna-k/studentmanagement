@@ -14,7 +14,6 @@ const bearerInstance = axios.create({
   baseURL: BASE_URL,
 })
 
-// Attach Bearer token dynamically
 bearerInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem("token")
   if (token) {
