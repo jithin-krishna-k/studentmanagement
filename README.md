@@ -155,20 +155,6 @@ MONGODB_URI=mongodb://localhost:27017/...   # MongoDB connection string
 JWT_SECRET=ZL9dQ2vAj1rP7                    # JWT signing secret
 ```
 
-### Frontend Configuration
-The frontend is configured to proxy API calls to `http://localhost:3000` during development.
-
-## 🚀 Deployment
-
-### Backend Deployment
-1. Set environment variables on your hosting platform
-2. Install dependencies: `npm install --production`
-3. Start the server: `npm start`
-
-### Frontend Deployment
-1. Build the application: `npm run build`
-2. Deploy the `dist/` folder to your hosting platform
-
 ## 🐛 Troubleshooting
 
 ### Common Issues
