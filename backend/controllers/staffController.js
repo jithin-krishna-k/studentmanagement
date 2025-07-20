@@ -24,14 +24,12 @@ exports.getStaffById = async (req, res) => {
 };
 
 exports.updateStaff = async (req, res) => {
-  console.log("jjjj", req.params.id, req.body);
 
   const updated = await updateStaffService(req.params.id, req.body);
   res.json(updated);
 };
 
 exports.updateStaffPermission = async (req, res) => {
-  console.log("jjjj", req.params.id, req.body);
 
   const updated = await updateStaffPermission(req.params.id, req.body);
   res.json(updated);

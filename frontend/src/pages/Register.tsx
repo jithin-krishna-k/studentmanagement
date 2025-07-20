@@ -36,8 +36,6 @@ export default function RegisterPage() {
             }
 
             const token = response.accessToken;
-            console.log("✅ Token received:", token);
-
             login(token);
             navigate(formData.role === "SuperAdmin" ? "/" : "/login");
         } catch (err: any) {

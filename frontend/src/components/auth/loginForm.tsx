@@ -30,7 +30,6 @@ export default function LoginForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("✅ Submitting with data:", formData);
     await onSubmit(formData);
   };
 

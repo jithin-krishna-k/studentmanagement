@@ -39,7 +39,6 @@ exports.updateStaffService = async (staffId, staffData) => {
 };
 
 exports.updateStaffPermission = async (staffId, staffData) => {
-  console.log({ staffId, staffData })
 
   const updated = await Staff.findByIdAndUpdate(
     staffId,
@@ -70,14 +69,10 @@ exports.createUser = async ({ ...user }) => {
 
 exports.getCurrentStaffService = async (staffId) => {
   const staff = await Staff.findById(staffId).select('-password');
-  console.log({ staff });
   return staff;
 };
 
 
 exports.verifyPassword = async (password, hashedPassword) => {
-  console.log({ password }, { hashedPassword });
-  console.log(await bcrypt.compare(password, hashedPassword))
-
   return await bcrypt.compare(password, hashedPassword);
 };

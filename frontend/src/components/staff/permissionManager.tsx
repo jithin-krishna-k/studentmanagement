@@ -44,7 +44,6 @@ export default function PermissionManager({ staff, onClose, onSave }: Permission
   const [error, setError] = useState("")
 
   useEffect(() => {
-    console.log("staff.permissions", staff?.permissions);
     if (staff?.permissions) {
       setPermissions(staff.permissions)
     }

@@ -29,7 +29,6 @@ const Login = () => {
       }
 
       const token = response.token;
-      console.log("✅ Token received:", token);
 
       await login(token);
       navigate(response.role === "SuperAdmin" ? "/" : "/");
