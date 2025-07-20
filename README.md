@@ -150,7 +150,7 @@ npm run lint       # Run ESLint
 
 ### Backend Environment Variables
 ```env
-PORT=5000                                    # Server port
+PORT=3000                                    # Server port
 MONGODB_URI=mongodb://localhost:27017/...   # MongoDB connection string
 JWT_SECRET=ZL9dQ2vAj1rP7                    # JWT signing secret
 ```
