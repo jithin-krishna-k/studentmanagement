@@ -1,10 +1,10 @@
-import instance from "../lib/axios";
+import {apiKeyInstance} from "../lib/axios";
 export const registerUser = async (formData: any) => {
-  const res = await instance.post(`/auth/register`, formData);
+  const res = await apiKeyInstance.post(`/auth/register`, formData);
   return res.data;
 };
 
 export const loginUser = async (formData: any) => {
-  const res = await instance.post(`/auth/login`, formData);
+  const res = await apiKeyInstance.post(`/auth/login`, formData);
   return res.data;
 };

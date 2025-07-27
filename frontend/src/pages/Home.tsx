@@ -3,22 +3,14 @@ import { useAuth } from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
 import { getAllStudents } from "@/api/student";
 import { getAllStaff } from "@/api/staff";
-import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-    const { user, isAuthInitialized, token } = useAuth();
+    const { user} = useAuth();
     const [studentCount, setStudentCount] = useState<number | null>(null);
     const [staffCount, setStaffCount] = useState<number | null>(null);
     const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
 
     useEffect(() => {
-        if (!isAuthInitialized) return;
-
-        if (!token) {
-            navigate("/auth/login", { replace: true });
-            return;
-        }
         async function fetchCounts() {
             setLoading(true);
 
@@ -47,7 +39,7 @@ export default function Home() {
         }
 
         fetchCounts();
-    }, [user, token, isAuthInitialized, navigate]);
+    }, [user]);
 
 
     if (!user) return null;

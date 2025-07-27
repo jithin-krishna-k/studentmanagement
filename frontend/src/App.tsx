@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import { useLocation } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner"
+import ProtectedRoute from "./routes/ProtectedRoute"
 
 function App() {
   const location = useLocation();
@@ -26,9 +27,9 @@ function App() {
           <AppSidebar />
           <main className="flex-1 p-6 bg-sidebar rounded-2xl my-5 mx-6">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/staff" element={<Staffs />} />
-              <Route path="/students" element={<Students />} />
+              <Route path="/" element={<ProtectedRoute ><Home /></ProtectedRoute>} />
+              <Route path="/staff" element={<ProtectedRoute ><Staffs /></ProtectedRoute>} />
+              <Route path="/students" element={<ProtectedRoute ><Students /></ProtectedRoute>} />
             </Routes>
           </main>
         </div>

@@ -135,7 +135,7 @@ export default function Students() {
   }
 
   if (!permissionsLoaded) {
-    return <div className="p-6 text-center">Loading permissions...</div>;
+    return <div>Loading...</div>;
   }
 
 

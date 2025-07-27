@@ -45,11 +45,7 @@ export default function StudentList({ students, loading, onEdit, onDelete, canUp
 
   if (students.length === 0) {
     return (
-      <Card>
-        <CardContent className="text-center py-12">
-          <p className="text-gray-500">No students found</p>
-        </CardContent>
-      </Card>
+      <p className="text-gray-500 text-center mt-8">No students found</p>
     )
   }
 
